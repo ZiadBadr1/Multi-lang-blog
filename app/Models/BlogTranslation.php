@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class BlogTranslation extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
+    protected $fillable = ['blog_id', 'locale', 'title', 'content'];
+
 }

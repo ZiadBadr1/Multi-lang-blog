@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard.index');
+});
+
+Route::group(['prefix' => 'admin','as' => 'admin.'],
+function (){
+   Route::get('setting' , [SettingController::class,'index'])->name('setting');
+   Route::post('setting/update/{setting}' , [SettingController::class,'update'])->name('setting.update');
 });

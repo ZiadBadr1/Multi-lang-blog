@@ -1,0 +1,17 @@
+{
+    "dashboard" : "Dashboard",
+    "users" : "users",
+    "setting" : "setting",
+    "logo" : "logo",
+    "favicon" : "favicon",
+    "facebook" : "facebook",
+    "linkedin" : "linkedin" ,
+    "address" : "address",
+    "phone" : "phone",
+    "translations" : "translations",
+    "content" : "content",
+    "email" : "email",
+    "update" : "update" ,
+    "cancel" :"cancel",
+    "required": "The :attribute field is required."
+}

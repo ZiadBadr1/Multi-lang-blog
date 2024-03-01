@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('content')->nullable();
             $table->string('address')->nullable();
             $table->unique(['setting_id','locale']);
-            $table->timestamps();
         });
     }
 
