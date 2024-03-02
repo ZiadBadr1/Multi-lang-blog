@@ -13,6 +13,15 @@
     "email" : "الايميل",
     "update" : "تعديل" ,
     "cancel" :"الغاء",
-    "required": "هذا الحقل مطلوب"
-
+    "required": "هذا الحقل مطلوب",
+    "updated_successfully": "تم التعديل بنجاح",
+    "name" : "الاسم",
+    "role" : "النوع",
+    "actions" : "العمليات",
+    "create_new_user" :"انشاء مستخدم جديد",
+    "created_successfully" :"تم الانشاء بنجاح",
+    "password" : "كلمه المرور",
+    "status" : "الحاله",
+    "create" : "انشاء",
+    "deleted_successfully" : "تم الحذف بنجاح"
 }

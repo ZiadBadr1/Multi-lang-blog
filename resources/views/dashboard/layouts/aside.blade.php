@@ -9,6 +9,7 @@
                 مدیریت کاربران
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.users.index')}}"><i class="icon-user-follow"></i>{{__('users')}}</a>
                 <a class="nav-link" href="{{route('admin.setting')}}"><i class="icon-user-follow"></i>{{__('setting')}}</a>
                 <a class="nav-link" href="#"><i class="icon-people"></i> لیست کاربران</a>
                 <a class="nav-link" href="#"><i class="icon-user-following"></i> دسترسی کاربران</a>

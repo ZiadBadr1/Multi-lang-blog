@@ -4,24 +4,14 @@
     <!-- Breadcrumb -->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">{{__('dashboard')}}</li>
-        <li class="breadcrumb-item"><a href="#">{{__('dashboard')}}</a>
-        </li>
-        <li class="breadcrumb-item active">{{__('dashboard')}}</li>
+        <li class="breadcrumb-item"><a href="#">{{__('setting')}}</a></li>
 
 
     </ol>
 
     <div class="container-fluid">
 
-        @if(session('success'))
-            <div class="col-12">
-                <div class="alert alert-success alert-dismissible fade show text-left">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                            aria-hidden="true">×</span></button>
-                    <strong> {{session('success')}}</strong>
-                </div>
-            </div>
-        @endif
+        @include('partials.alert')
         <div class="animated fadeIn">
             <form action="{{route('admin.setting.update',['setting'=>$setting])}}" method="post"
                   enctype="multipart/form-data">
@@ -29,7 +19,7 @@
                 <div class="row">
                     <div class="card">
                         <div class="card-header">
-                            <strong>{{ __('settings') }}</strong>
+                            <strong>{{ __('setting') }}</strong>
                         </div>
                         <div class="card-block">
                             <div class="form-group col-md-6">

@@ -13,5 +13,7 @@
     "email" : "email",
     "update" : "update" ,
     "cancel" :"cancel",
-    "required": "The :attribute field is required."
+    "required": "The :attribute field is required.",
+    "updated_successfully": "updated successfully"
+
 }

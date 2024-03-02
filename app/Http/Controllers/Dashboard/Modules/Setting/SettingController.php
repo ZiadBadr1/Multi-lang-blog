@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard\Modules\Setting;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\SettingUpdateRequest;
 use App\Models\Setting;
-use Illuminate\Http\Request;
 use App\Traits\GeneralTrait;
 
 class SettingController extends Controller
@@ -30,6 +30,6 @@ class SettingController extends Controller
         }
         $setting->update($attributes);
 
-        return redirect()->back()->with('success',"hello ");
+        return redirect()->back()->with('success',__('updated_successfully'));
     }
 }
