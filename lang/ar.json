@@ -23,5 +23,11 @@
     "password" : "كلمه المرور",
     "status" : "الحاله",
     "create" : "انشاء",
-    "deleted_successfully" : "تم الحذف بنجاح"
+    "deleted_successfully" : "تم الحذف بنجاح",
+    "primary" : "رئيسية",
+    "secondary" : "فرعيه",
+    "categories" : "الفئات",
+    "create_new_category" : "انشاء فئه جديده",
+    "image": "الصورة",
+    "parent" : "تابع"
 }
