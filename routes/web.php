@@ -24,10 +24,10 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin','as' => 'admin.','middleware' => 'auth'],
 function (){
-   Route::get('dashboard' , [HomeController::class,'index'])->name('dashboard');
 
+   Route::get('dashboard' , [HomeController::class,'index'])->name('dashboard');
    // User
-   Route::resource('users' , UserController::class);
+   Route::resource('users' , UserController::class)->middleware('IsAdmin');
 
    // Category
    Route::resource('category' , CategoryController::class);
@@ -37,8 +37,8 @@ function (){
 
 
 
-   Route::get('setting' , [SettingController::class,'index'])->name('setting');
-   Route::post('setting/update/{setting}' , [SettingController::class,'update'])->name('setting.update');
+   Route::get('setting' , [SettingController::class,'index'])->name('setting')->middleware('IsAdmin');
+   Route::post('setting/update/{setting}' , [SettingController::class,'update'])->name('setting.update')->middleware('IsAdmin');
 });
 
 Auth::routes();

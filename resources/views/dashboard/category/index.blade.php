@@ -37,12 +37,13 @@
                                 <tr>
                                 <td> <img class="img-fluid" style="width: 50px;" src="{{$category->image()}}"
                                           alt="Card image cap"></td>
-                                    <td> {{$category->translate("ar")->title}}</td>
-                                    <td> {{$category->translate("ar")->content}}</td>
+                                    <td> {{$category->translate(app()->getLocale())->title}}</td>
+                                    <td> {{$category->translate(app()->getLocale())->content}}</td>
 
-                                    <td> @if(isset($category->parent)) {{$category->parent->translate("ar")->title}} @else {{__('primary')}}@endif</td>
+                                    <td> @if(isset($category->parent)) {{$category->parent->translate(app()->getLocale())->title}} @else {{__('primary')}}@endif</td>
                                     <td class="align-middle text-right">
-                                        <div style="display: inline-block;">
+                                        @if(auth()->user()->type == 'admin')
+                                            <div style="display: inline-block;">
                                             <a href="{{route('admin.category.edit',$category)}}"  class="edit btn btn-success btn-sm" ><i class="fa fa-edit"></i></a>
                                         </div>
                                         <div style="display: inline-block;">
@@ -52,6 +53,7 @@
                                                 <button class="edit btn btn-danger btn-sm"> <i class="fa fa-trash"></i></button>
                                             </form>
                                         </div>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

@@ -2,11 +2,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="CoreUI Bootstrap 4 Admin Template">
-    <meta name="author" content="Lukasz Holeczek">
-    <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
-    <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
-    <title>CoreUI Bootstrap 4 Admin Template</title>
+    <meta name="description" content="{{ $setting->translate(app()->getlocale())->content }}">
+    <meta name="keyword" content="{{ $setting->translate(app()->getlocale())->title }}">
+    <link rel="shortcut icon" href="{{ asset('storage/'.$setting->favicon) }}">
+    <title>{{ $setting->translate(app()->getlocale())->title }}</title>
     <!-- Icons -->
     <link href="{{asset('BackendAssets/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('BackendAssets/css/simple-line-icons.css')}}" rel="stylesheet">

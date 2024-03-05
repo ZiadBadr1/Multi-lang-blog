@@ -13,7 +13,7 @@ class Blog extends Model implements TranslatableContract
 
     use HasFactory , Translatable ,SoftDeletes;
     public $translatedAttributes = ['title', 'content','tags'];
-    protected $fillable= ['image', 'category_id'];
+    protected $fillable= ['image', 'category_id', 'user_id'];
 
     public function image()
     {
@@ -23,5 +23,9 @@ class Blog extends Model implements TranslatableContract
     public function category()
     {
         return $this->belongsTo(Category::class , 'category_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class , 'user_id');
     }
 }

@@ -37,10 +37,13 @@
                                 <tr>
                                 <td> <img class="img-fluid" style="width: 50px;" src="{{$blog->image()}}"
                                           alt="Card image cap"></td>
-                                <td> {{$blog->translate("ar")->title}}</td>
-                                <td> {{$blog->translate("ar")->content}}</td>
-                                <td> {{$blog->category->translate("ar")->title}}</td>
+                                <td> {{$blog->translate(app()->getLocale())->title}}</td>
+                                <td> {{$blog->translate(app()->getLocale())->content}}</td>
+                                <td>
+{{--                                    {{$blog->category->translate(app()->getLocale())->title}}--}}
+                                </td>
                                     <td class="align-middle text-right">
+                                        @if(auth()->user()->id === $blog->user_id)
                                         <div style="display: inline-block;">
                                             <a href="{{route('admin.blog.edit',$blog)}}"  class="edit btn btn-success btn-sm" ><i class="fa fa-edit"></i></a>
                                         </div>
@@ -51,6 +54,7 @@
                                                 <button class="edit btn btn-danger btn-sm"> <i class="fa fa-trash"></i></button>
                                             </form>
                                         </div>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

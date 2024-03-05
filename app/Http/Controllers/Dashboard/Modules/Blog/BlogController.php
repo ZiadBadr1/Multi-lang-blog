@@ -12,6 +12,11 @@ use App\Traits\GeneralTrait;
 class BlogController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('IsWriter')->only('edit','update','destroy');
+    }
+
     use GeneralTrait;
     public function index()
     {
@@ -21,12 +26,16 @@ class BlogController extends Controller
     public function create()
     {
         $categories = Category::all();
+        if (!count($categories))
+        {
+            return redirect()->route('admin.category.create')->with('info',__('create_category'));
+        }
         return view('dashboard.blog.create',compact('categories'));
     }
     public function store(BlogStoreRequest $request)
     {
         $attributes = $request->validated();
-
+        $attributes['user_id'] = auth()->user()->id;
         if($request->hasFile('image'))
         {
             $attributes['image'] = $this->uploadImage($request,$attributes,'image','blog');

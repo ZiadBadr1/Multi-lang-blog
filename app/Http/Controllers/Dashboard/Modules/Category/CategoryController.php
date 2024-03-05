@@ -11,6 +11,10 @@ use App\Traits\GeneralTrait;
 class CategoryController extends Controller
 {
     use GeneralTrait;
+    public function __construct()
+    {
+        $this->middleware('IsAdmin')->except('index');
+    }
     public function index()
     {
         $categories = Category::with('parent')->paginate(10);
