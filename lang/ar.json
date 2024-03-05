@@ -29,5 +29,9 @@
     "categories" : "الفئات",
     "create_new_category" : "انشاء فئه جديده",
     "image": "الصورة",
-    "parent" : "تابع"
+    "parent" : "القسم",
+    "title" : "العنوان",
+    "create_new_blog" : "انشاء مدونه جديده",
+    "blogs": "المدونات",
+    "tags" : "الكلمات المفتاحيه"
 }

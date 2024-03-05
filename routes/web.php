@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\Modules\Blog\BlogController;
 use App\Http\Controllers\Dashboard\Modules\Category\CategoryController;
 use App\Http\Controllers\Dashboard\Modules\Setting\SettingController;
 use App\Http\Controllers\Dashboard\Modules\Users\UserController;
@@ -30,6 +31,9 @@ function (){
 
    // Category
    Route::resource('category' , CategoryController::class);
+
+   // Blogs
+   Route::resource('blog' , BlogController::class);
 
 
 

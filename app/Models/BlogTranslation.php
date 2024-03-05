@@ -10,6 +10,6 @@ class BlogTranslation extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['blog_id', 'locale', 'title', 'content'];
+    protected $fillable = ['blog_id', 'locale', 'title', 'content', 'tags'];
 
 }

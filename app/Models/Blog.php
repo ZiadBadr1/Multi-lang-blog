@@ -12,6 +12,16 @@ class Blog extends Model implements TranslatableContract
 {
 
     use HasFactory , Translatable ,SoftDeletes;
-    public $translatedAttributes = ['title', 'content'];
+    public $translatedAttributes = ['title', 'content','tags'];
     protected $fillable= ['image', 'category_id'];
+
+    public function image()
+    {
+        return ($this->image) ? asset('storage/'.$this->image) : asset('BackendAssets/img/flags/Palestine.png');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class , 'category_id');
+    }
 }
